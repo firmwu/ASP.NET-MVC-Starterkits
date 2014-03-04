@@ -18,6 +18,11 @@ namespace _1_WelcomMVC.Controllers
 
         public ActionResult Index()
         {
+            List<int> _fakeData = new List<int>();
+            _fakeData.AddRange(Enumerable.Range(0, 10));
+            SelectList selectList = new SelectList(_fakeData);
+            
+            ViewBag.demo = selectList;
             return View(db.GBs.ToList());
         }
 
@@ -52,9 +57,10 @@ namespace _1_WelcomMVC.Controllers
             if (ModelState.IsValid)
             {
                 gb.Id = Guid.NewGuid();
+                gb.PostTime = DateTime.Now;
                 db.GBs.Add(gb);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("List");
             }
 
             return View(gb);
@@ -100,6 +106,15 @@ namespace _1_WelcomMVC.Controllers
                 return HttpNotFound();
             }
             return View(gb);
+        }
+
+
+        public ActionResult List()
+        {
+
+
+
+            return View("_List",db.GBs.ToList());
         }
 
         //

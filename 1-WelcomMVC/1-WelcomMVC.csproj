@@ -352,6 +352,7 @@
     <Content Include="Views\Guestbook\Create.cshtml" />
     <Content Include="Views\Guestbook\Edit.cshtml" />
     <Content Include="Views\Guestbook\Delete.cshtml" />
+    <Content Include="Views\Guestbook\_List.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

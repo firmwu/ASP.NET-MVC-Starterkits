@@ -1,14 +1,13 @@
 ﻿@model IEnumerable<_1_WelcomMVC.Models.GB>
 
+@*
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
 @{
-    ViewBag.Title = "Index";
+    Layout = null;
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 <table>
     <tr>
         <th>
@@ -43,19 +42,3 @@
 }
 
 </table>
-@Html.DropDownList("demo", (SelectList)ViewBag.dropdownSource)
-
-<select id="mydemo">
-@foreach (var item in (SelectList)ViewBag.demo)
-    {
-        if (int.Parse(item.Text) % 3 == 0)
-        {
-            @Html.Raw("<optgroup label='group_" + item.Text +"'>")
-        }
-        <option>@item.Text</option>
-         if (int.Parse(item.Text) % 3 == 2)
-        {
-            @Html.Raw("</optgroup>")
-        }
-    }
-</select>
