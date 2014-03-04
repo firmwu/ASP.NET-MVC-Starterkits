@@ -5,8 +5,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using _1_WelcomMVC.Models;
 
-namespace _1_WelcomMVC.Models
+namespace _1_WelcomMVC.Controllers
 {
     public class GuestbookController : Controller
     {
@@ -62,7 +63,7 @@ namespace _1_WelcomMVC.Models
         //
         // GET: /Guestbook/Edit/5
 
-        public ActionResult Edit(Guid id)
+        public ActionResult Edit(Guid id )
         {
             GB gb = db.GBs.Find(id);
             if (gb == null)
@@ -91,7 +92,7 @@ namespace _1_WelcomMVC.Models
         //
         // GET: /Guestbook/Delete/5
 
-        public ActionResult Delete(Guid id )
+        public ActionResult Delete(Guid id)
         {
             GB gb = db.GBs.Find(id);
             if (gb == null)
